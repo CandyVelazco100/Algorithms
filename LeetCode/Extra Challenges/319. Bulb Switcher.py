@@ -8,3 +8,7 @@ Return the number of bulbs that are on after n rounds. */
 class Solution:
     def bulbSwitch(self, n: int) -> int:
         return int(math.sqrt(n))
+
+class Solution:
+    def bulbSwitch(self, n: int) -> int:
+        return isqrt(n)
