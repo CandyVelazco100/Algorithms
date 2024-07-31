@@ -16,3 +16,16 @@ var twoSum = function(nums, target) {
     }
     return indexes;
 };
+
+var twoSum = function(nums, target) { 
+    const map = {}
+
+    for(let index = 0; index <= nums.length; index++){
+        let diff = target - nums[index];
+
+        if(map.hasOwnProperty(diff)){
+            return [map[diff], index];
+        }
+        map[nums[index]] = index;
+    }
+};
