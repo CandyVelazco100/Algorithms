@@ -27,4 +27,4 @@ SELECT
     SUM(amount) AS trans_total_amount,
     SUM(IF(state='approved', amount, 0)) AS approved_total_amount
 FROM Transactions
-GROUP BY country, MONTH(trans_date);
+GROUP BY DATE_FORMAT(trans_date,"%Y-%m"), Country;
