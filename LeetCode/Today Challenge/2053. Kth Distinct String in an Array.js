@@ -12,17 +12,21 @@ If there are fewer than k distinct strings, return an empty string "".
 var kthDistinct = function(arr, k) {
     const frequencyMap = {};
 
+    // Count the frequency of each string in the array.
     for(const i of arr){
         frequencyMap[i] = (frequencyMap[i] || 0) + 1;
     }
 
+    // Iterate through the array to find the k-th distinct string.
     for(const i of arr){
         if(frequencyMap[i] === 1){
+            // Decrement k and check if we have found the k-th distinct string.
             k --;
             if(k===0){
                 return i;
             }
         }
     }
+    // If the k-th distinct string is not found, return an empty string.
     return "";
 };
